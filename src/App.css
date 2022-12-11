@@ -45,6 +45,6 @@
 
 .search {
     text-align: center;
-    width: 400px;
+    max-width: 400px;
     margin: 50px auto;
 }
