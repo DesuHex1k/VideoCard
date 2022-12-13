@@ -10,6 +10,7 @@ import Rem from './components/Rem';
 
 
 function App() {
+  
   const [product, setproduct] = useState ([
 
     {id: 1, Name: 'Msi Gtx 950 2gb' , price: '2000', img:require('./img/gtx 950.jpg')},
@@ -35,7 +36,16 @@ function App() {
   ])
 
   const [SearchQuery, setSerchQuery] = useState('')
+
   const [modal, setmodal] = useState(false)
+
+  const [order, setorder] = useState([
+    {id: 1, Name: 'test', Fio: 'test', Adress: 'test', Num: 'test'}
+  ])
+
+  const addOrder = (NewOrder) => {
+    setorder([...order, NewOrder])
+  }
 
   const searchProduct = useMemo(() => {
       return product.filter(product => product.Name.toLocaleLowerCase().includes(SearchQuery))
@@ -44,19 +54,17 @@ function App() {
   return (
     <div className="App">
 
-        <MyModal visible={modal} setvisible={setmodal} > <Rem/> </MyModal>
+        <MyModal visible={modal} setvisible={setmodal} > <Rem order={addOrder} setmodal={() => setmodal()}/> </MyModal>
 
         <div>
         <h1 className='Head'>VideoCardShop</h1>
         </div>
-
 
         <div className="search">
           <h1 className='txt'>Поиск</h1>
         <MyInput value={SearchQuery} onChange={(e) => setSerchQuery(e.target.value)} placeholder="Поиск (нижним регистром)"/>
         </div>
         
-
         <div className='ban_all'>
           
         {searchProduct.map((product) => 
