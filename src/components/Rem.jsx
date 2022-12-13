@@ -31,7 +31,7 @@ function Rem({setmodal, order}) {
     return ( 
         <div className='a' >
 
-            <h3 className='txt'>Название товара</h3>   
+            <h4 className='txt'>Название товара</h4>   
 
             <MyInput
             
@@ -41,7 +41,7 @@ function Rem({setmodal, order}) {
                 placeholder="Название товара"
             />
 
-            <h3 className='txt'>Имя Фамилия</h3>
+            <h4 className='txt'>Имя Фамилия</h4>
 
             <MyInput
             value={Order.Fio}
@@ -50,7 +50,7 @@ function Rem({setmodal, order}) {
                 placeholder="Имя Фамилия"
             />
 
-            <h3 className='txt'>Номер телефона</h3> 
+            <h4 className='txt'>Номер телефона</h4> 
 
             <MyInput
             value={Order.Num}
@@ -59,7 +59,7 @@ function Rem({setmodal, order}) {
                 placeholder="Номер телефона"
             />
 
-            <h3 className='txt'>Адрес доставки</h3> 
+            <h4 className='txt'>Адрес доставки</h4> 
 
             <MyInput
                 value={Order.Adress}
