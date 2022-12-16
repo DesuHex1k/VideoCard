@@ -6,19 +6,13 @@ import MyInput from '../UI/input/MyInput';
 function Rem({setmodal, order}) {
     const [Order, setOrder] = useState({ Name: '', Fio: '', Adress: '', Num: '' })
 
-    const CreateNewOrder = (event) => {
-
-        // event.preventDefault()
-
-        
-
+    const CreateNewOrder = () => {
         const NewOrder = {
             ...Order, id: Date.now()
         }
 
         order(NewOrder)
     
-        // setposts([{...post, id: Date.now()}])
         setOrder({ Name: '', Fio: '', Adress: '', Num: ''})
       }
 

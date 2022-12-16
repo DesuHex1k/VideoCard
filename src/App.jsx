@@ -5,7 +5,6 @@ import { useState } from 'react';
 import MyInput from './UI/input/MyInput';
 import { useMemo } from 'react';
 import MyModal from './UI/MyModal/MyModal';
-import MyButton from './UI/button/MyButton';
 import Rem from './components/Rem';
 
 
@@ -39,43 +38,51 @@ function App() {
 
   const [modal, setmodal] = useState(false)
 
-  const [order, setorder] = useState([
-    {id: 1, Name: 'test', Fio: 'test', Adress: 'test', Num: 'test'}
-  ])
+  const [order, setorder] = useState([])
+
+  
 
   const addOrder = (NewOrder) => {
+
     setorder([...order, NewOrder])
+
   }
 
   const searchProduct = useMemo(() => {
+
       return product.filter(product => product.Name.toLocaleLowerCase().includes(SearchQuery))
+
   }, [SearchQuery, product])
 
+  
+
   return (
+  
     <div className="App">
 
-        <MyModal visible={modal} setvisible={setmodal} > <Rem order={addOrder} setmodal={() => setmodal()}/> </MyModal>
+      <MyModal visible={modal} setvisible={setmodal} > <Rem order={addOrder} setmodal={() => setmodal()}/> </MyModal>
 
-        <div>
+      <div>
         <h1 className='Head'>VideoCardShop</h1>
-        </div>
+      </div>
 
-        <div className="search">
-          <h1 className='txt'>Поиск</h1>
+      <div className="search">
+        <h1 className='txt'>Поиск</h1>
         <MyInput value={SearchQuery} onChange={(e) => setSerchQuery(e.target.value)} placeholder="Поиск (нижним регистром)"/>
-        </div>
+      </div>
+      
+      <div className='ban_all'>
         
-        <div className='ban_all'>
-          
         {searchProduct.map((product) => 
 
             <Order setmodal={() => setmodal(true)} product={product} key={product.id}/>
 
         )}
 
-        </div>
-        
+      </div>
+      
     </div>
+
   );
 }
 

@@ -18,7 +18,6 @@
 }
 
 .txt {
-    /* color: #E6E6FA; */
     color: white;
     width: 100%;
 }
@@ -29,6 +28,12 @@
     justify-content: space-around;
     grid-template-columns: 40% 40%;
 }
+
+@media screen and (max-width: 800px) {
+    .ban_all {
+        grid-template-columns: 40%;
+    }
+  }
 
 .ban_img {
     height: 150px;
