@@ -29,12 +29,6 @@
     grid-template-columns: 40% 40%;
 }
 
-@media screen and (max-width: 800px) {
-    .ban_all {
-        grid-template-columns: 40%;
-    }
-  }
-
 .ban_img {
     height: 150px;
     width: 150px;
